@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – Stick Together Family</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%);
+      color: white;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: white;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { opacity: 0.85; font-size: 0.95rem; }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 24px 80px;
+    }
+
+    .contact-banner {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .contact-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .contact-banner h2 { font-size: 1rem; color: #1e3a8a; margin-bottom: 4px; }
+    .contact-banner p  { font-size: 0.9rem; color: #374151; margin: 0; }
+    .contact-banner a  {
+      color: #3b5bdb;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .contact-banner a:hover { text-decoration: underline; }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a237e;
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    /* Feature grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .feature-card .emoji { font-size: 1.5rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .feature-card h3 { font-size: 0.9rem; font-weight: 700; color: #111827; margin-bottom: 3px; }
+    .feature-card p  { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.4; }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #111827;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      color: #3f51b5;
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    details[open] summary::after { content: "−"; }
+    .faq-item .answer {
+      padding: 0 20px 16px;
+      font-size: 0.9rem;
+      color: #374151;
+      border-top: 1px solid #f3f4f6;
+    }
+    .faq-item .answer p  { margin-top: 12px; }
+    .faq-item .answer ul { margin: 8px 0 0 18px; }
+    .faq-item .answer li { margin-bottom: 4px; }
+
+    /* Steps */
+    .steps { display: flex; flex-direction: column; gap: 10px; }
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #3f51b5;
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-body h4 { font-size: 0.9rem; font-weight: 700; color: #111827; margin-bottom: 2px; }
+    .step-body p  { font-size: 0.85rem; color: #6b7280; margin: 0; }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      padding: 24px;
+      border-top: 1px solid #e5e7eb;
+    }
+    footer a { color: #6b7280; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-icon">👨‍👩‍👧‍👦</div>
+  <h1>Stick Together Family</h1>
+  <p>Support Center &nbsp;·&nbsp; We're here to help</p>
+</header>
+
+<main>
+
+  <!-- Contact banner -->
+  <div class="contact-banner">
+    <div class="icon">✉️</div>
+    <div>
+      <h2>Need help? Contact us directly</h2>
+      <p>Email us at <a href="mailto:tonthat.consulting@gmail.com">tonthat.consulting@gmail.com</a> and we'll get back to you as soon as possible — usually within 48 hours.</p>
+    </div>
+  </div>
+
+  <!-- Features overview -->
+  <div class="section-title">What's in the app</div>
+  <div class="features">
+    <div class="feature-card">
+      <span class="emoji">✅</span>
+      <div>
+        <h3>Tasks &amp; Checklists</h3>
+        <p>Create, assign and track tasks with deadlines, notes and file attachments.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="emoji">🛒</span>
+      <div>
+        <h3>Shopping Lists</h3>
+        <p>Shared lists with master item library, organized by project and checked off in real time.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="emoji">📅</span>
+      <div>
+        <h3>Family Calendar</h3>
+        <p>One shared calendar with device sync and reminders so nothing is missed.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="emoji">🍳</span>
+      <div>
+        <h3>Recipes &amp; Cooking</h3>
+        <p>Save recipes and generate a shopping list from any recipe in one tap.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="emoji">📔</span>
+      <div>
+        <h3>Family Diary</h3>
+        <p>Shared diary with rich text, inline photos and file attachments.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="emoji">📝</span>
+      <div>
+        <h3>Memos &amp; Contacts</h3>
+        <p>Notes, family contacts and documents — organized and always accessible.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="emoji">💰</span>
+      <div>
+        <h3>Finance &amp; Net Worth</h3>
+        <p>Track household finances and monitor net worth trends over time.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="emoji">🐟</span>
+      <div>
+        <h3>Virtual Family Pet</h3>
+        <p>Raise a virtual pet together — feed it, keep it healthy and solve riddles as a family.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="emoji">☁️</span>
+      <div>
+        <h3>Google Drive</h3>
+        <p>Attach files and photos from Google Drive. Data stays in your own Drive account.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Getting started -->
+  <div class="section-title">Getting started</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Create an account</h4>
+        <p>Sign up with your email address. No social login required.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Create or join a family</h4>
+        <p>Create a new family group, then share the invite code with your family members so they can join.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Connect Google Drive</h4>
+        <p>Go to Settings → Google to connect your Google account and enable file attachments and finance tracking.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Explore the features</h4>
+        <p>Use the tabs at the bottom of the app to access Tasks, Shopping, Calendar, Diary and more.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-title">Frequently asked questions</div>
+  <div class="faq">
+
+    <details class="faq-item">
+      <summary>How do I invite family members?</summary>
+      <div class="answer">
+        <p>Go to <strong>Settings → Family → Invite Code</strong>. Share the 6-character code with your family members. They can enter it in the app when joining a family group.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can multiple people use the app at the same time?</summary>
+      <div class="answer">
+        <p>Yes. All data is synced in real time via our cloud. Multiple family members can add tasks, check off shopping items or write diary entries simultaneously.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What does the subscription include?</summary>
+      <div class="answer">
+        <p>The subscription unlocks the full app for your entire family group. A single subscription covers all members — everyone benefits once one person subscribes.</p>
+        <ul>
+          <li>Unlimited tasks, shopping lists and diary entries</li>
+          <li>Google Drive integration and file attachments</li>
+          <li>Finance &amp; net worth tracking</li>
+          <li>Virtual family pet with AI riddles</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>My Google Drive connection isn't working. What should I do?</summary>
+      <div class="answer">
+        <p>Try the following steps:</p>
+        <ul>
+          <li>Go to Settings → Google and tap <strong>Disconnect</strong>, then reconnect.</li>
+          <li>Make sure you have granted all requested permissions when signing in with Google.</li>
+          <li>Check your internet connection.</li>
+          <li>If the problem persists, contact us at <a href="mailto:tonthat.consulting@gmail.com">tonthat.consulting@gmail.com</a>.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>I forgot my password. How do I reset it?</summary>
+      <div class="answer">
+        <p>On the login screen, tap <strong>Forgot password?</strong> and enter your email address. You will receive a reset link within a few minutes. Check your spam folder if it doesn't arrive.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How is my data stored and kept private?</summary>
+      <div class="answer">
+        <p>Your family data is stored securely in our cloud database and is only accessible to members of your family group. Files and photos are stored in your own Google Drive account. We never sell or share your data with third parties for advertising</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I delete my account or family?</summary>
+      <div class="answer">
+        <p>To delete a family, go to <strong>Settings → Danger Zone → Delete Family</strong>. This permanently removes all family data (admin only).</p>
+        </div>
+    </details>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>Stick Together Family &nbsp;·&nbsp; Developed by Minh Tu TON THAT &nbsp;·&nbsp; <a href="mailto:tonthat.consulting@gmail.com">tonthat.consulting@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
