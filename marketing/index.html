@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stick Together Family – All your family needs, in one app</title>
+  <meta name="description" content="Stick Together Family is the all-in-one app for modern families. Tasks, shopping, calendar, diary, recipes, finance tracking and more — shared and synced in real time." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%);
+      color: white;
+      padding: 72px 24px 64px;
+      text-align: center;
+    }
+    .hero .app-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      background: white;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .hero .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      opacity: 0.9;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      padding: 7px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    /* ── Section wrapper ──────────────────────────────────────── */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #3f51b5;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: #6b7280;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    /* ── Feature grid ─────────────────────────────────────────── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      transition: box-shadow 0.2s;
+    }
+    .feature-card:hover { box-shadow: 0 4px 20px rgba(63,81,181,0.1); }
+    .feature-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+    }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+    .feature-card p  { font-size: 0.88rem; color: #6b7280; line-height: 1.55; margin: 0; }
+
+    /* icon bg colours */
+    .bg-green  { background: #dcfce7; }
+    .bg-orange { background: #ffedd5; }
+    .bg-blue   { background: #dbeafe; }
+    .bg-yellow { background: #fef9c3; }
+    .bg-purple { background: #f3e8ff; }
+    .bg-amber  { background: #fef3c7; }
+    .bg-emerald{ background: #d1fae5; }
+    .bg-teal   { background: #ccfbf1; }
+    .bg-sky    { background: #e0f2fe; }
+
+    /* ── Highlight strip ──────────────────────────────────────── */
+    .highlight-strip {
+      background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%);
+      color: white;
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .highlight-strip h2 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .highlight-strip p {
+      opacity: 0.88;
+      max-width: 540px;
+      margin: 0 auto 32px;
+      font-size: 1rem;
+    }
+    .pillars {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .pillar {
+      flex: 1;
+      min-width: 160px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 14px;
+      padding: 20px 16px;
+    }
+    .pillar .num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pillar p { font-size: 0.85rem; opacity: 0.85; margin: 0; }
+
+    /* ── Privacy strip ────────────────────────────────────────── */
+    .privacy-strip {
+      background: #f0fdf4;
+      border-top: 1px solid #bbf7d0;
+      border-bottom: 1px solid #bbf7d0;
+      padding: 40px 24px;
+    }
+    .privacy-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .privacy-inner .icon { font-size: 2.2rem; flex-shrink: 0; }
+    .privacy-inner h2 { font-size: 1.1rem; font-weight: 700; color: #166534; margin-bottom: 6px; }
+    .privacy-inner p  { font-size: 0.9rem; color: #374151; margin: 0; }
+    .privacy-inner a  { color: #15803d; font-weight: 600; }
+
+    /* ── CTA ──────────────────────────────────────────────────── */
+    .cta {
+      text-align: center;
+      padding: 72px 24px;
+      background: white;
+    }
+    .cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #111827; margin-bottom: 12px; }
+    .cta p  { color: #6b7280; max-width: 480px; margin: 0 auto 32px; }
+    .store-badges { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .store-btn:hover { opacity: 0.85; }
+    .store-btn.apple  { background: #111827; color: white; }
+    .store-btn.google { background: #3f51b5; color: white; }
+    .store-btn .store-icon { font-size: 1.4rem; }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+    }
+    footer a { color: #d1d5db; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Hero ──────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="app-icon">👨‍👩‍👧‍👦</div>
+  <h1>Stick Together Family</h1>
+  <p class="tagline">The all-in-one app that keeps your whole family connected, organised and on the same page — every day.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">📱 iOS &amp; Android</span>
+    <span class="hero-badge">☁️ Real-time sync</span>
+    <span class="hero-badge">🔒 Private &amp; secure</span>
+    <span class="hero-badge">👨‍👩‍👧‍👦 The whole family</span>
+  </div>
+</section>
+
+<!-- ── Features ───────────────────────────────────────────────────── -->
+<div class="section">
+  <p class="section-label">Everything in one place</p>
+  <h2 class="section-title">Nine powerful features,<br>built for real family life</h2>
+  <p class="section-sub">From daily chores to precious memories — Stick Together Family covers everything your household needs.</p>
+
+  <div class="features">
+
+    <div class="feature-card">
+      <div class="icon bg-green">✅</div>
+      <h3>Tasks &amp; Checklists</h3>
+      <p>Create and assign tasks to family members. Track deadlines, add notes and attach files. Never forget who's responsible for what.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon bg-orange">🛒</div>
+      <h3>Shopping Lists &amp; Projects</h3>
+      <p>Build shared shopping lists with your family. Reference a master item list, organise by project and check things off together in real time.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon bg-blue">📅</div>
+      <h3>Family Calendar</h3>
+      <p>One calendar for everyone. Add events, set reminders and sync with your device calendar so nothing slips through the cracks.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon bg-amber">🍳</div>
+      <h3>Recipes &amp; Cooking</h3>
+      <p>Save your family's favourite recipes. Generate a shopping list directly from any recipe with a single tap.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon bg-purple">📔</div>
+      <h3>Diary with Photos</h3>
+      <p>Capture family memories in a shared diary. Add rich text, inline photos and attachments to preserve every moment.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon bg-yellow">📝</div>
+      <h3>Memos &amp; Contacts</h3>
+      <p>Store important notes, family contacts and documents — all organised and always accessible to every member.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon bg-emerald">💰</div>
+      <h3>Finance &amp; Net Worth</h3>
+      <p>Track your household finances, monitor net worth over time and stay on top of your family's financial goals.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon bg-teal">🐟</div>
+      <h3>Virtual Family Pet</h3>
+      <p>Raise a virtual pet together! Feed it, keep it healthy and solve AI-generated riddles as a family. When the pet graduates, start all over again.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon bg-sky">☁️</div>
+      <h3>Google Drive Integration</h3>
+      <p>Attach files, photos and documents directly from your Google Drive. Everything stays linked and migratable — even if you switch accounts.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Highlight strip ────────────────────────────────────────────── -->
+<div class="highlight-strip">
+  <h2>Designed for the whole family</h2>
+  <p>One subscription covers every member. No per-person pricing — just one plan for your whole household.</p>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="num">9</div>
+      <p>Built-in features</p>
+    </div>
+    <div class="pillar">
+      <div class="num">∞</div>
+      <p>Family members</p>
+    </div>
+    <div class="pillar">
+      <div class="num">1</div>
+      <p>Subscription for all</p>
+    </div>
+    <div class="pillar">
+      <div class="num">📱</div>
+      <p>iOS &amp; Android</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Privacy ────────────────────────────────────────────────────── -->
+<div class="privacy-strip">
+  <div class="privacy-inner">
+    <span class="icon">🔒</span>
+    <div>
+      <h2>Your family's data stays private</h2>
+      <p>Your data is stored securely and is only accessible to your own family group. We never sell data or use it for advertising. Files and photos are stored in your own Google Drive account.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA ────────────────────────────────────────────────────────── -->
+<div class="cta">
+  <h2>Start organising your family today</h2>
+  <p>Free to download. One affordable subscription unlocks everything for every member of your household.</p>
+  <div class="store-badges">
+    <a href="#" class="store-btn apple">
+      <span class="store-icon"></span>
+      <span>Download on the<br><strong>App Store</strong></span>
+    </a>
+    <a href="#" class="store-btn google">
+      <span class="store-icon">▶</span>
+      <span>Get it on<br><strong>Google Play</strong></span>
+    </a>
+  </div>
+</div>
+
+<!-- ── Footer ─────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-links">
+    <a href="mailto:tonthat.consulting@gmail.com">Contact</a>
+  </div>
+  <p>© 2026 Stick Together Family &nbsp;·&nbsp; Developed by Minh Tu TON THAT</p>
+</footer>
+
+</body>
+</html>
