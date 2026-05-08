@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stick Together Family – Family organiser app</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    /* ── Hero ─────────────────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, #1a2b5e 0%, #4f6af5 100%);
+      color: white;
+      padding: 72px 24px 60px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      max-width: 540px;
+      margin: 0 auto 32px;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .badge:hover { background: rgba(255,255,255,0.25); text-decoration: none; }
+    .badge-primary {
+      background: white;
+      color: #1a2b5e;
+      border-color: white;
+    }
+    .badge-primary:hover { background: #e8ecff; }
+
+    /* ── Main content ─────────────────────────────────────────────────── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Tagline strip ────────────────────────────────────────────────── */
+    .tagline {
+      text-align: center;
+      padding: 52px 0 16px;
+    }
+    .tagline h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a2b5e;
+      margin-bottom: 10px;
+      border: none;
+    }
+    .tagline p {
+      color: #4b5563;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── Feature grid ─────────────────────────────────────────────────── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .feature-icon { font-size: 2rem; margin-bottom: 12px; }
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a2b5e;
+      margin-bottom: 6px;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    /* ── Highlight box ────────────────────────────────────────────────── */
+    .highlight {
+      background: #eff6ff;
+      border-left: 4px solid #4f6af5;
+      padding: 18px 22px;
+      border-radius: 4px;
+      margin: 36px 0;
+    }
+    .highlight p { margin: 0; }
+
+    /* ── Role section ─────────────────────────────────────────────────── */
+    h2 {
+      font-size: 1.35rem;
+      color: #1a2b5e;
+      margin: 48px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    p  { margin-bottom: 12px; }
+    ul { margin: 8px 0 16px 22px; }
+    li { margin-bottom: 6px; }
+    a  { color: #4f6af5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Roles grid ───────────────────────────────────────────────────── */
+    .roles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 20px 0 8px;
+    }
+    .role-card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .role-card .role-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .role-card h4 { font-size: 0.95rem; font-weight: 700; color: #1a2b5e; margin-bottom: 4px; }
+    .role-card p { font-size: 0.82rem; color: #6b7280; margin: 0; }
+
+    /* ── Contact / footer ─────────────────────────────────────────────── */
+    .contact-box {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      text-align: center;
+      margin-top: 48px;
+    }
+    .contact-box h3 { font-size: 1.2rem; font-weight: 700; color: #1a2b5e; margin-bottom: 8px; }
+    .contact-box p  { margin: 0; color: #4b5563; }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+      padding: 28px 24px;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 60px;
+    }
+    footer a { color: #4f6af5; }
+  </style>
+</head>
+<body>
+
+<!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+<header>
+  <div class="logo">🏠</div>
+  <h1>Stick Together Family</h1>
+  <p>One app for your whole family — tasks, shopping, recipes, calendar, diary, and more.</p>
+  <div class="badge-row">
+    <a class="badge" href="../private-policy/index.html">Privacy Policy</a>
+    <a class="badge" href="mailto:tonthat.consulting@gmail.com">Contact</a>
+  </div>
+</header>
+
+<!-- ── Main ──────────────────────────────────────────────────────────────── -->
+<main>
+
+  <div class="tagline">
+    <h2>Everything your family needs, in one place</h2>
+    <p>Stick Together Family keeps every member organised, connected, and on the same page — from the youngest child to the parents running the household.</p>
+  </div>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">✅</div>
+      <h3>Tasks &amp; Chores</h3>
+      <p>Create task lists, assign chores to family members, set due dates, reminders, and track completion together.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <h3>Family Calendar</h3>
+      <p>Shared calendar with events, time-blocked activities, and automatic reminders synced across every device.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛒</div>
+      <h3>Shopping Lists</h3>
+      <p>Collaborative grocery lists and project shopping — add items from anywhere, check them off in the store.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🍳</div>
+      <h3>Family Recipes</h3>
+      <p>Build a private cookbook with your favourite family recipes, complete with ingredients and step-by-step instructions.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📖</div>
+      <h3>Family Diary</h3>
+      <p>Capture memories with photos, captions, and comments shared only within your family.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📋</div>
+      <h3>Task Templates</h3>
+      <p>Built-in templates for holidays, school mornings, cleaning days, and more. Customise or create your own.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔁</div>
+      <h3>Routines</h3>
+      <p>Daily and weekly habit checklists for every family member, with step-by-step guidance and progress tracking.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🐠</div>
+      <h3>Virtual Pet</h3>
+      <p>A family fish that grows and evolves as everyone completes their tasks — a fun way to motivate the whole household.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎵</div>
+      <h3>Music Library</h3>
+      <p>Upload and organise the family's favourite songs with lyrics, all stored securely in your Google Drive.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p>🔒 <strong>Privacy first.</strong> Your family's data is only visible to members of your family group. We never sell your data or use it for advertising. <a href="../private-policy/index.html">Read our full Privacy Policy →</a></p>
+  </div>
+
+  <!-- Roles -->
+  <h2>Designed for every family member</h2>
+  <p>Each member has a role with the right level of access — parents stay in control while kids and teens stay engaged.</p>
+
+  <div class="roles">
+    <div class="role-card">
+      <div class="role-icon">👑</div>
+      <h4>Admin</h4>
+      <p>Full access. Manages family settings, roles, Google Drive setup, and subscriptions.</p>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">👨‍👩‍</div>
+      <h4>Parent</h4>
+      <p>Full household access including finances, tasks, shopping, calendar, and diary.</p>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">🧑</div>
+      <h4>Teen</h4>
+      <p>Access to all shared content except finance. Ideal for older children helping at home.</p>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">🧒</div>
+      <h4>Child</h4>
+      <p>Sees only their assigned tasks, routines, music, and the virtual pet. Safe and focused.</p>
+    </div>
+  </div>
+
+  <!-- Subscription -->
+  <h2>Simple, family-wide subscription</h2>
+  <p>One subscription covers every member of your family — no per-seat pricing.</p>
+  <ul>
+    <li><strong>Free trial:</strong> the first 30 days after creating a family are completely free.</li>
+    <li><strong>Family plan:</strong> a single subscription unlocks the full app for all members.</li>
+    <li>Subscriptions are managed securely by <strong>Google Play</strong> — we never handle payment details.</li>
+    <li>Cancel any time directly from your Play Store account.</li>
+  </ul>
+
+  <!-- Google Drive -->
+  <h2>Google Drive integration</h2>
+  <p>Attach photos and files to tasks and diary entries. Upload family songs. Everything is stored in a dedicated "Stick Together Family" folder in <strong>your own</strong> Google Drive — you always own your data. You can revoke access at any time from your <a href="https://myaccount.google.com/permissions" target="_blank">Google Account settings</a>.</p>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <h3>Questions or feedback?</h3>
+    <p>We'd love to hear from you.<br/>
+    Email us at <a href="mailto:tonthat.consulting@gmail.com">tonthat.consulting@gmail.com</a></p>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 Stick Together Family &nbsp;·&nbsp; Developed by Minh Tu TON THAT &nbsp;·&nbsp;
+  <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
